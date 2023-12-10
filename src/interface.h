@@ -11,12 +11,6 @@ namespace cli {
 	bool isValidCommandKey(char &key);
 
 	/**
-	 * Initialize the console by temporarily setting the terminals PS1 and PS2 env variables to an
-	 * empty string, and then prints the main menu.
-	 */
-	void init();
-
-	/**
 	 * Clears the screen, then prints the main menu over multiple lines.
 	 */
 	void printMainMenu();

@@ -1,31 +1,29 @@
-#include <cstdio>
-
 #include "interface.h"
+#include "operations.h"
+#include <curses.h>
 
 int main() {
 
-	char key_pressed = {};
+	initscr();
 
-	cli::init();
+	
 
-	// Main function loop
-	while(1) {
+	cli::printMainMenu();
 
-		// 1. Show main menu
-		// 2. Wait for user input
-		// 3. Check the command key
-		// 3.1 If integer, it's written in 
-		//     the calc and start from the top
-		// 3.2 If valid char, execute that function
-		//     and start from the top
-		// 3.3 If nonvalid char, print help menu
-		//     and start from the top
+	while (1) {
 
-		cli::printMainMenu();
+		switch(getch()) {
+			case 113:
+				Quit();
+				break;
+			case 104:
+				Help();
+				break;
+		};
 
-		key_pressed = getc(stdin);
-
-
+		refresh();
 	}
+
+	endwin();
 	return 0;
 }
