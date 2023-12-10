@@ -1,5 +1,7 @@
+#include <curses.h>
 #include <iostream>
 #include <ncurses.h>
+#include <string>
 
 #include "interface.h"
 
@@ -14,21 +16,28 @@ void printCalculatorFrame() {
 }
 
 
+void printCenteredString(int y, std::string message) {
+	
+	int x;
+	x = COLS/2;
+
+	mvprintw(y, x-(message.length()/2), message.data());
+
+}
+
+
 void cli::printMainMenu(){
 
 	clear();
 	
-	int x,y;
-	x = 50;
-	y = 25;
+	int y;
+	y = LINES/2;
 
-	mvprintw(y,x,"<-----  CLI CALCULATOR ----->");
-	mvprintw(y+1,x,"Written by Xavier Berthiaume circa 2023");
+	printCenteredString(y, "<----- CLI CALCULATOR ----->");
+	printCenteredString(y+1, "Written by Xavier Berthiaume circa 2023");
 
-	move(y+3,x+15);
-	printw("\tPress (h) for Help");
-	move(y+4,x+15);
-	printw("\tPress (q) to Quit");
+	printCenteredString(y+5, "Press (h) for Help");
+	printCenteredString(y+6, "Press (q) to Quit");
 	
 }
 
@@ -36,11 +45,13 @@ void cli::printHelpMenu(){
 
 	clear();
 
+	std::string message = {};
 	int x,y;
-	x = 50;
-	y = 10;
+	x = COLS/2;
+	y = LINES/2;
 
-	mvprintw(y, x,"<----- HELP MENU ----->");
+	message = "<----- HELP MENU ----->";
+	mvprintw(y, x-(message.length()/2), message.data());
 	mvprintw(y+1,x+15, "Press a for special effects");
 	mvprintw(y+2, x+15, "Press q to quit");
 
