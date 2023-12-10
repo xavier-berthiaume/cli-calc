@@ -6,6 +6,8 @@ int main() {
 
 	char pressed_key = {};
 
+	cli::initInterface();
+
 	initscr();
 
 
