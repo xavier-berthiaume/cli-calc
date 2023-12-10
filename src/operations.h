@@ -5,7 +5,7 @@
 
 struct Quit {
 
-	static const char key = 'q';
+	static const int key_ascii_code = 113;
 
 	static void action();
 
@@ -16,7 +16,7 @@ struct Quit {
 
 struct Help {
 
-	static const char key = 'h';
+	static const int key_ascii_code = 104;
 
 	static void action();
 

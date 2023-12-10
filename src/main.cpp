@@ -1,29 +1,33 @@
 #include "interface.h"
 #include "operations.h"
-#include <curses.h>
+#include <ncurses.h>
 
 int main() {
 
+	char pressed_key = {};
+
 	initscr();
 
-	
 
-	cli::printMainMenu();
+	while(1) {
 
-	while (1) {
+		refresh();
 
-		switch(getch()) {
-			case 113:
-				Quit();
+		cli::printMainMenu();
+		
+		pressed_key = getch();
+
+		switch(pressed_key) {
+			case Quit::key_ascii_code: 
+				Quit::action();
 				break;
-			case 104:
-				Help();
+			case Help::key_ascii_code:
+				Help::action();
+				getch();
 				break;
 		};
 
-		refresh();
 	}
 
-	endwin();
 	return 0;
 }

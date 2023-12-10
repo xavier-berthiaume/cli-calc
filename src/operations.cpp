@@ -1,9 +1,13 @@
+#include <ncurses.h>
 #include <cstdlib>
 
-#include "./operations.h"
+#include "operations.h"
+#include "interface.h"
+
 
 void Quit::action() {
 
+	endwin();
 	exit(0);
 
 };
@@ -12,4 +16,11 @@ void Quit::action() {
 std::string Quit::getHelpString() {
 
 	return "";
+};
+
+
+void Help::action() {
+
+	cli::printHelpMenu();
+
 };
