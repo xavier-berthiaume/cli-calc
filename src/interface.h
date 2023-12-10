@@ -1,5 +1,7 @@
 #pragma once
 
+#include <ncurses.h>
+
 namespace cli {
 
 	// Set the minimum terminal size for the application to run properly
@@ -34,4 +36,32 @@ namespace cli {
 	*/
 	void printCreditScreen();
 
+};
+
+/**
+ * Singleton implementation of the consoles calculator interface.
+ */
+class CalculatorInterface {
+
+	static CalculatorInterface *instance;
+	static const int WIDTH = 50, HEIGHT = 16;
+
+	WINDOW *win;
+
+	CalculatorInterface() = default;
+
+public:
+	
+	static CalculatorInterface *getInstance();
+
+	WINDOW *getWindow();
+
+	/**
+	 * Draws out the calculators borders as a box. The size of the box is that
+	 * defined by WIDTH and HEIGHT.
+	 *
+	 * The position of the box is roughly a little below the vertical center.
+	 * It horizontally centers.
+	 */
+	void drawCalculatorInterface();
 };

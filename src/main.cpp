@@ -8,12 +8,7 @@ int main() {
 
 	cli::initInterface();
 
-	initscr();
-
-
 	while(1) {
-
-		refresh();
 
 		cli::printMainMenu();
 		
