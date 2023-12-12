@@ -1,6 +1,6 @@
-#include <curses.h>
 #include <ncurses.h>
 #include <string>
+#include <tuple>
 
 #include "interface.h"
 
@@ -107,6 +107,327 @@ CalculatorInterface *CalculatorInterface::getInstance() {
 	}
 
 	return instance;
+
+}
+
+
+bool validatePosition(unsigned int &position) {
+
+	if(position < 8)
+		return true;
+
+	return false;
+
+}
+
+std::tuple<int, int> calculatePositionCoordinates(unsigned int &position) {
+
+	// The top row will always be at y = 1
+	int y = 1, x;
+
+	x = 1 + position * 7;
+
+	return std::make_tuple(y,x);
+	
+}
+
+
+void CalculatorInterface::printZero(unsigned int position) {
+
+	// Exit the function early if we're not printing
+	// in a valid position
+	if(!validatePosition(position))
+		return;
+
+	// Get the window we're printing in
+	WINDOW *win = CalculatorInterface::getInstance()->getWindow();
+
+	std::tuple<int, int> coordinates = calculatePositionCoordinates(position);
+
+	int y = std::get<0>(coordinates), x = std::get<1>(coordinates);
+
+	// Special thanks to Yuan Qing Lim for sharing some ascii art of 
+	// each digit on github gists.
+	//
+	// https://gist.github.com/yuanqing/ffa2244bd134f911d365
+	// https://yuanqing.sg
+	mvwprintw(win, y, x,   " 0000 ");
+	mvwprintw(win, y+1, x, "00  00");
+	mvwprintw(win, y+2, x, "00  00");
+	mvwprintw(win, y+3, x, "00  00");
+	mvwprintw(win, y+4, x, " 0000 ");
+
+	wrefresh(win);
+
+}
+
+
+void CalculatorInterface::printOne(unsigned int position) {
+
+	// Exit the function early if we're not printing
+	// in a valid position
+	if(!validatePosition(position))
+		return;
+
+	// Get the window we're printing in
+	WINDOW *win = CalculatorInterface::getInstance()->getWindow();
+
+	std::tuple<int, int> coordinates = calculatePositionCoordinates(position);
+
+	int y = std::get<0>(coordinates), x = std::get<1>(coordinates);
+
+	// Special thanks to Yuan Qing Lim for sharing some ascii art of 
+	// each digit on github gists.
+	//
+	// https://gist.github.com/yuanqing/ffa2244bd134f911d365
+	// https://yuanqing.sg
+	mvwprintw(win, y, x,   "1111  ");
+	mvwprintw(win, y+1, x, "  11  ");
+	mvwprintw(win, y+2, x, "  11  ");
+	mvwprintw(win, y+3, x, "  11  ");
+	mvwprintw(win, y+4, x, "111111");
+
+	wrefresh(win);
+
+}
+
+
+void CalculatorInterface::printTwo(unsigned int position) {
+
+	// Exit the function early if we're not printing
+	// in a valid position
+	if(!validatePosition(position))
+		return;
+
+	// Get the window we're printing in
+	WINDOW *win = CalculatorInterface::getInstance()->getWindow();
+
+	std::tuple<int, int> coordinates = calculatePositionCoordinates(position);
+
+	int y = std::get<0>(coordinates), x = std::get<1>(coordinates);
+
+	// Special thanks to Yuan Qing Lim for sharing some ascii art of 
+	// each digit on github gists.
+	//
+	// https://gist.github.com/yuanqing/ffa2244bd134f911d365
+	// https://yuanqing.sg
+	mvwprintw(win, y, x,   " 2222 ");
+	mvwprintw(win, y+1, x, "22  22");
+	mvwprintw(win, y+2, x, "   22 ");
+	mvwprintw(win, y+3, x, "  22  ");
+	mvwprintw(win, y+4, x, "222222");
+
+	wrefresh(win);
+
+}
+
+
+void CalculatorInterface::printThree(unsigned int position) {
+
+	// Exit the function early if we're not printing
+	// in a valid position
+	if(!validatePosition(position))
+		return;
+
+	// Get the window we're printing in
+	WINDOW *win = CalculatorInterface::getInstance()->getWindow();
+
+	std::tuple<int, int> coordinates = calculatePositionCoordinates(position);
+
+	int y = std::get<0>(coordinates), x = std::get<1>(coordinates);
+
+	// Special thanks to Yuan Qing Lim for sharing some ascii art of 
+	// each digit on github gists.
+	//
+	// https://gist.github.com/yuanqing/ffa2244bd134f911d365
+	// https://yuanqing.sg
+	mvwprintw(win, y, x,   " 3333 ");
+	mvwprintw(win, y+1, x, "33  33");
+	mvwprintw(win, y+2, x, "   333");
+	mvwprintw(win, y+3, x, "33  33");
+	mvwprintw(win, y+4, x, " 3333 ");
+
+	wrefresh(win);
+
+}
+
+
+void CalculatorInterface::printFour(unsigned int position) {
+
+	// Exit the function early if we're not printing
+	// in a valid position
+	if(!validatePosition(position))
+		return;
+
+	// Get the window we're printing in
+	WINDOW *win = CalculatorInterface::getInstance()->getWindow();
+
+	std::tuple<int, int> coordinates = calculatePositionCoordinates(position);
+
+	int y = std::get<0>(coordinates), x = std::get<1>(coordinates);
+
+	// Special thanks to Yuan Qing Lim for sharing some ascii art of 
+	// each digit on github gists.
+	//
+	// https://gist.github.com/yuanqing/ffa2244bd134f911d365
+	// https://yuanqing.sg
+	mvwprintw(win, y, x,   "44  44");
+	mvwprintw(win, y+1, x, "44  44");
+	mvwprintw(win, y+2, x, "444444");
+	mvwprintw(win, y+3, x, "    44");
+	mvwprintw(win, y+4, x, "    44");
+
+	wrefresh(win);
+
+}
+
+
+void CalculatorInterface::printFive(unsigned int position) {
+
+	// Exit the function early if we're not printing
+	// in a valid position
+	if(!validatePosition(position))
+		return;
+
+	// Get the window we're printing in
+	WINDOW *win = CalculatorInterface::getInstance()->getWindow();
+
+	std::tuple<int, int> coordinates = calculatePositionCoordinates(position);
+
+	int y = std::get<0>(coordinates), x = std::get<1>(coordinates);
+
+	// Special thanks to Yuan Qing Lim for sharing some ascii art of 
+	// each digit on github gists.
+	//
+	// https://gist.github.com/yuanqing/ffa2244bd134f911d365
+	// https://yuanqing.sg
+	mvwprintw(win, y, x,   "555555");
+	mvwprintw(win, y+1, x, "55    ");
+	mvwprintw(win, y+2, x, "55555 ");
+	mvwprintw(win, y+3, x, "    55");
+	mvwprintw(win, y+4, x, "55555 ");
+
+	wrefresh(win);
+
+}
+
+
+void CalculatorInterface::printSix(unsigned int position) {
+
+	// Exit the function early if we're not printing
+	// in a valid position
+	if(!validatePosition(position))
+		return;
+
+	// Get the window we're printing in
+	WINDOW *win = CalculatorInterface::getInstance()->getWindow();
+
+	std::tuple<int, int> coordinates = calculatePositionCoordinates(position);
+
+	int y = std::get<0>(coordinates), x = std::get<1>(coordinates);
+
+	// Special thanks to Yuan Qing Lim for sharing some ascii art of 
+	// each digit on github gists.
+	//
+	// https://gist.github.com/yuanqing/ffa2244bd134f911d365
+	// https://yuanqing.sg
+	mvwprintw(win, y, x,   " 6666 ");
+	mvwprintw(win, y+1, x, "66    ");
+	mvwprintw(win, y+2, x, "66666 ");
+	mvwprintw(win, y+3, x, "66  66");
+	mvwprintw(win, y+4, x, " 6666 ");
+
+	wrefresh(win);
+
+}
+
+
+void CalculatorInterface::printSeven(unsigned int position) {
+	
+	// Exit the function early if we're not printing
+	// in a valid position
+	if(!validatePosition(position))
+		return;
+
+	// Get the window we're printing in
+	WINDOW *win = CalculatorInterface::getInstance()->getWindow();
+
+	std::tuple<int, int> coordinates = calculatePositionCoordinates(position);
+
+	int y = std::get<0>(coordinates), x = std::get<1>(coordinates);
+
+	// Special thanks to Yuan Qing Lim for sharing some ascii art of 
+	// each digit on github gists.
+	//
+	// https://gist.github.com/yuanqing/ffa2244bd134f911d365
+	// https://yuanqing.sg
+	mvwprintw(win, y, x,   "777777");
+	mvwprintw(win, y+1, x, "   77 ");
+	mvwprintw(win, y+2, x, "  77  ");
+	mvwprintw(win, y+3, x, " 77   ");
+	mvwprintw(win, y+4, x, "77    ");
+
+	wrefresh(win);
+
+}
+
+
+void CalculatorInterface::printEight(unsigned int position) {
+
+	// Exit the function early if we're not printing
+	// in a valid position
+	if(!validatePosition(position))
+		return;
+
+	// Get the window we're printing in
+	WINDOW *win = CalculatorInterface::getInstance()->getWindow();
+
+	std::tuple<int, int> coordinates = calculatePositionCoordinates(position);
+
+	int y = std::get<0>(coordinates), x = std::get<1>(coordinates);
+
+	// Special thanks to Yuan Qing Lim for sharing some ascii art of 
+	// each digit on github gists.
+	//
+	// https://gist.github.com/yuanqing/ffa2244bd134f911d365
+	// https://yuanqing.sg
+	mvwprintw(win, y, x,   " 8888 ");
+	mvwprintw(win, y+1, x, "88  88");
+	mvwprintw(win, y+2, x, " 8888 ");
+	mvwprintw(win, y+3, x, "88  88");
+	mvwprintw(win, y+4, x, " 8888 ");
+
+	wrefresh(win);
+
+}
+
+
+void CalculatorInterface::printNine(unsigned int position) {
+
+	// Exit the function early if we're not printing
+	// in a valid position
+	if(!validatePosition(position))
+		return;
+
+	// Get the window we're printing in
+	WINDOW *win = CalculatorInterface::getInstance()->getWindow();
+
+	std::tuple<int, int> coordinates = calculatePositionCoordinates(position);
+
+	int y = std::get<0>(coordinates), x = std::get<1>(coordinates);
+
+	// Special thanks to Yuan Qing Lim for sharing some ascii art of 
+	// each digit on github gists.
+	//
+	// https://gist.github.com/yuanqing/ffa2244bd134f911d365
+	// https://yuanqing.sg
+	mvwprintw(win, y, x,   " 9999 ");
+	mvwprintw(win, y+1, x, "99  99");
+	mvwprintw(win, y+2, x, " 99999");
+	mvwprintw(win, y+3, x, "    99");
+	mvwprintw(win, y+4, x, " 9999 ");
+
+	wrefresh(win);
 
 }
 
