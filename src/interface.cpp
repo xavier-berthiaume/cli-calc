@@ -65,6 +65,7 @@ void cli::printMainMenu() {
 	printCenteredString(y+6, "Press (q) to Quit");
 	
 	CalculatorInterface::getInstance()->drawCalculatorInterface();
+	CalculatorInterface::getInstance()->printNumber(1);
 
 	refresh();
 
@@ -141,7 +142,7 @@ void CalculatorInterface::printNegative(unsigned int position) {
 		return;
 
 	// Get the window we're printing in
-	WINDOW *win = CalculatorInterface::getInstance()->getWindow();
+	WINDOW *win = this->getWindow();
 
 	std::tuple<int, int> coordinates = calculatePositionCoordinates(position);
 
@@ -157,8 +158,6 @@ void CalculatorInterface::printNegative(unsigned int position) {
 	mvwprintw(win, y+2, x, "------");
 	mvwprintw(win, y+3, x, "      ");
 	mvwprintw(win, y+4, x, "      ");
-
-	wrefresh(win);
 	
 }
 
@@ -170,7 +169,7 @@ void CalculatorInterface::printZero(unsigned int position) {
 		return;
 
 	// Get the window we're printing in
-	WINDOW *win = CalculatorInterface::getInstance()->getWindow();
+	WINDOW *win = this->getWindow();
 
 	std::tuple<int, int> coordinates = calculatePositionCoordinates(position);
 
@@ -187,8 +186,6 @@ void CalculatorInterface::printZero(unsigned int position) {
 	mvwprintw(win, y+3, x, "00  00");
 	mvwprintw(win, y+4, x, " 0000 ");
 
-	wrefresh(win);
-
 }
 
 
@@ -200,7 +197,7 @@ void CalculatorInterface::printOne(unsigned int position) {
 		return;
 
 	// Get the window we're printing in
-	WINDOW *win = CalculatorInterface::getInstance()->getWindow();
+	WINDOW *win = this->getWindow();
 
 	std::tuple<int, int> coordinates = calculatePositionCoordinates(position);
 
@@ -217,8 +214,6 @@ void CalculatorInterface::printOne(unsigned int position) {
 	mvwprintw(win, y+3, x, "  11  ");
 	mvwprintw(win, y+4, x, "111111");
 
-	wrefresh(win);
-
 }
 
 
@@ -230,7 +225,7 @@ void CalculatorInterface::printTwo(unsigned int position) {
 		return;
 
 	// Get the window we're printing in
-	WINDOW *win = CalculatorInterface::getInstance()->getWindow();
+	WINDOW *win = this->getWindow();
 
 	std::tuple<int, int> coordinates = calculatePositionCoordinates(position);
 
@@ -247,8 +242,6 @@ void CalculatorInterface::printTwo(unsigned int position) {
 	mvwprintw(win, y+3, x, "  22  ");
 	mvwprintw(win, y+4, x, "222222");
 
-	wrefresh(win);
-
 }
 
 
@@ -260,7 +253,7 @@ void CalculatorInterface::printThree(unsigned int position) {
 		return;
 
 	// Get the window we're printing in
-	WINDOW *win = CalculatorInterface::getInstance()->getWindow();
+	WINDOW *win = this->getWindow();
 
 	std::tuple<int, int> coordinates = calculatePositionCoordinates(position);
 
@@ -277,8 +270,6 @@ void CalculatorInterface::printThree(unsigned int position) {
 	mvwprintw(win, y+3, x, "33  33");
 	mvwprintw(win, y+4, x, " 3333 ");
 
-	wrefresh(win);
-
 }
 
 
@@ -290,7 +281,7 @@ void CalculatorInterface::printFour(unsigned int position) {
 		return;
 
 	// Get the window we're printing in
-	WINDOW *win = CalculatorInterface::getInstance()->getWindow();
+	WINDOW *win = this->getWindow();
 
 	std::tuple<int, int> coordinates = calculatePositionCoordinates(position);
 
@@ -307,8 +298,6 @@ void CalculatorInterface::printFour(unsigned int position) {
 	mvwprintw(win, y+3, x, "    44");
 	mvwprintw(win, y+4, x, "    44");
 
-	wrefresh(win);
-
 }
 
 
@@ -320,7 +309,7 @@ void CalculatorInterface::printFive(unsigned int position) {
 		return;
 
 	// Get the window we're printing in
-	WINDOW *win = CalculatorInterface::getInstance()->getWindow();
+	WINDOW *win = this->getWindow();
 
 	std::tuple<int, int> coordinates = calculatePositionCoordinates(position);
 
@@ -337,8 +326,6 @@ void CalculatorInterface::printFive(unsigned int position) {
 	mvwprintw(win, y+3, x, "    55");
 	mvwprintw(win, y+4, x, "55555 ");
 
-	wrefresh(win);
-
 }
 
 
@@ -350,7 +337,7 @@ void CalculatorInterface::printSix(unsigned int position) {
 		return;
 
 	// Get the window we're printing in
-	WINDOW *win = CalculatorInterface::getInstance()->getWindow();
+	WINDOW *win = this->getWindow();
 
 	std::tuple<int, int> coordinates = calculatePositionCoordinates(position);
 
@@ -367,8 +354,6 @@ void CalculatorInterface::printSix(unsigned int position) {
 	mvwprintw(win, y+3, x, "66  66");
 	mvwprintw(win, y+4, x, " 6666 ");
 
-	wrefresh(win);
-
 }
 
 
@@ -380,7 +365,7 @@ void CalculatorInterface::printSeven(unsigned int position) {
 		return;
 
 	// Get the window we're printing in
-	WINDOW *win = CalculatorInterface::getInstance()->getWindow();
+	WINDOW *win = this->getWindow();
 
 	std::tuple<int, int> coordinates = calculatePositionCoordinates(position);
 
@@ -397,8 +382,6 @@ void CalculatorInterface::printSeven(unsigned int position) {
 	mvwprintw(win, y+3, x, " 77   ");
 	mvwprintw(win, y+4, x, "77    ");
 
-	wrefresh(win);
-
 }
 
 
@@ -410,7 +393,7 @@ void CalculatorInterface::printEight(unsigned int position) {
 		return;
 
 	// Get the window we're printing in
-	WINDOW *win = CalculatorInterface::getInstance()->getWindow();
+	WINDOW *win = this->getWindow();
 
 	std::tuple<int, int> coordinates = calculatePositionCoordinates(position);
 
@@ -427,8 +410,6 @@ void CalculatorInterface::printEight(unsigned int position) {
 	mvwprintw(win, y+3, x, "88  88");
 	mvwprintw(win, y+4, x, " 8888 ");
 
-	wrefresh(win);
-
 }
 
 
@@ -440,7 +421,7 @@ void CalculatorInterface::printNine(unsigned int position) {
 		return;
 
 	// Get the window we're printing in
-	WINDOW *win = CalculatorInterface::getInstance()->getWindow();
+	WINDOW *win = this->getWindow();
 
 	std::tuple<int, int> coordinates = calculatePositionCoordinates(position);
 
@@ -456,8 +437,6 @@ void CalculatorInterface::printNine(unsigned int position) {
 	mvwprintw(win, y+2, x, " 99999");
 	mvwprintw(win, y+3, x, "    99");
 	mvwprintw(win, y+4, x, " 9999 ");
-
-	wrefresh(win);
 
 }
 
@@ -478,6 +457,12 @@ void CalculatorInterface::drawCalculatorInterface() {
 
 void CalculatorInterface::printNumber(int value_to_print) {
 
-	CalculatorInterface::getInstance()->printOne(0);
-
+	this->printOne(0);
+	this->printTwo(1);
+	this->printThree(2);
+	this->printFour(3);
+	this->printFive(4);
+	this->printSix(5);
+	this->printSeven(6);
+	this->drawCalculatorInterface();
 }
