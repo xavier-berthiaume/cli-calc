@@ -65,7 +65,7 @@ void cli::printMainMenu() {
 	printCenteredString(y+6, "Press (q) to Quit");
 	
 	CalculatorInterface::getInstance()->drawCalculatorInterface();
-	CalculatorInterface::getInstance()->printNumber(1);
+	CalculatorInterface::getInstance()->printNumber(-123);
 
 	refresh();
 
@@ -457,12 +457,50 @@ void CalculatorInterface::drawCalculatorInterface() {
 
 void CalculatorInterface::printNumber(int value_to_print) {
 
-	this->printOne(0);
-	this->printTwo(1);
-	this->printThree(2);
-	this->printFour(3);
-	this->printFive(4);
-	this->printSix(5);
-	this->printSeven(6);
+	std::string converted_number = std::to_string(value_to_print);
+	int position = {0};
+
+	for(char &digit : converted_number) {
+		
+		switch(digit) {
+			case 48:
+				this->printZero(position);
+				break;
+			case 49:
+				this->printOne(position);
+				break;
+			case 50:
+				this->printTwo(position);
+				break;
+			case 51:
+				this->printThree(position);
+				break;
+			case 52:
+				this->printFour(position);
+				break;
+			case 53:
+				this->printFive(position);
+				break;
+			case 54:
+				this->printSix(position);
+				break;
+			case 55:
+				this->printSeven(position);
+				break;
+			case 56:
+				this->printEight(position);
+				break;
+			case 57:
+				this->printNine(position);
+				break;
+			case 45:
+				this->printNegative(position);
+				break;
+		};
+
+		position++;
+
+	}
+
 	this->drawCalculatorInterface();
 }
