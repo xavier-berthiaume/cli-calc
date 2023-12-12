@@ -11,7 +11,7 @@ int main() {
 	while(1) {
 
 		cli::printMainMenu();
-		
+
 		pressed_key = getch();
 
 		switch(pressed_key) {

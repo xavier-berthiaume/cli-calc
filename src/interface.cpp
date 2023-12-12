@@ -65,8 +65,9 @@ void cli::printMainMenu() {
 	printCenteredString(y+6, "Press (q) to Quit");
 	
 	CalculatorInterface::getInstance()->drawCalculatorInterface();
-	
+
 	refresh();
+
 }
 
 void cli::printHelpMenu() {
@@ -113,7 +114,7 @@ CalculatorInterface *CalculatorInterface::getInstance() {
 
 bool validatePosition(unsigned int &position) {
 
-	if(position < 8)
+	if(position < 7)
 		return true;
 
 	return false;
@@ -128,9 +129,38 @@ std::tuple<int, int> calculatePositionCoordinates(unsigned int &position) {
 	x = 1 + position * 7;
 
 	return std::make_tuple(y,x);
-	
+
 }
 
+
+void CalculatorInterface::printNegative(unsigned int position) {
+
+	// Exit the function early if we're not printing
+	// in a valid position
+	if(!validatePosition(position))
+		return;
+
+	// Get the window we're printing in
+	WINDOW *win = CalculatorInterface::getInstance()->getWindow();
+
+	std::tuple<int, int> coordinates = calculatePositionCoordinates(position);
+
+	int y = std::get<0>(coordinates), x = std::get<1>(coordinates);
+
+	// Special thanks to Yuan Qing Lim for sharing some ascii art of 
+	// each digit on github gists.
+	//
+	// https://gist.github.com/yuanqing/ffa2244bd134f911d365
+	// https://yuanqing.sg
+	mvwprintw(win, y, x,   "      ");
+	mvwprintw(win, y+1, x, "      ");
+	mvwprintw(win, y+2, x, "------");
+	mvwprintw(win, y+3, x, "      ");
+	mvwprintw(win, y+4, x, "      ");
+
+	wrefresh(win);
+	
+}
 
 void CalculatorInterface::printZero(unsigned int position) {
 
@@ -443,4 +473,11 @@ void CalculatorInterface::drawCalculatorInterface() {
 
 	box(this->getWindow(), 0, 0);
 	wrefresh(this->getWindow());
+}
+
+
+void CalculatorInterface::printNumber(int value_to_print) {
+
+	CalculatorInterface::getInstance()->printOne(0);
+
 }

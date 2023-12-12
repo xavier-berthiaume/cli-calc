@@ -64,6 +64,7 @@ class CalculatorInterface {
 	 * calculator interface the number will be printed. Positions are from LEFT
 	 * to RIGHT and start at 0.
 	 */
+	void printNegative(unsigned int position);
 	void printZero(unsigned int position);
 	void printOne(unsigned int position);
 	void printTwo(unsigned int position);
@@ -96,4 +97,10 @@ public:
 	 * It horizontally centers.
 	 */
 	void drawCalculatorInterface();
+	
+	/**
+	 * Converts the passed int to ascii art and prints it to the calculator
+	 * interface.
+	 */
+	void printNumber(int value_to_print);
 };
