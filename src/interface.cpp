@@ -56,7 +56,7 @@ void cli::printMainMenu() {
 	clear();
 	
 	int y;
-	y = LINES/2;
+	y = 2;
 
 	printCenteredString(y, "<----- CLI CALCULATOR ----->");
 	printCenteredString(y+1, "Written by Xavier Berthiaume circa 2023");
@@ -65,7 +65,7 @@ void cli::printMainMenu() {
 	printCenteredString(y+6, "Press (q) to Quit");
 	
 	CalculatorInterface::getInstance()->drawCalculatorInterface();
-	CalculatorInterface::getInstance()->printNumber(-123);
+	CalculatorInterface::getInstance()->printNumber(9999999);
 
 	refresh();
 
@@ -76,7 +76,7 @@ void cli::printHelpMenu() {
 	clear();
 
 	int y;
-	y = LINES/2;
+	y = 2;
 
 	printCenteredString(y, "<----- HELP MENU ----->");
 	printCenteredString(y+1, "Press a for special effects");
@@ -85,6 +85,7 @@ void cli::printHelpMenu() {
 	printCenteredString(y+5, "PRESS ANY KEY TO CONTINUE");
 
 	refresh();
+
 }
 
 
@@ -101,8 +102,8 @@ CalculatorInterface *CalculatorInterface::getInstance() {
 		
 		int start_x, start_y;
 
-		start_x = COLS/2 - 25;
-		start_y = LINES/2 + 8;
+		start_x = COLS/2 - CalculatorInterface::WIDTH/2;
+		start_y = 10;
 		instance->win = newwin(CalculatorInterface::HEIGHT, CalculatorInterface::WIDTH, start_y, start_x);
 		refresh();
 
@@ -121,6 +122,7 @@ bool validatePosition(unsigned int &position) {
 	return false;
 
 }
+
 
 std::tuple<int, int> calculatePositionCoordinates(unsigned int &position) {
 
