@@ -1,5 +1,8 @@
 #include "interface.h"
 #include "calculator.h"
+#include <ncurses.h>
+
+Calculator *Calculator::instance = nullptr;
 
 Calculator *Calculator::getInstance() {
 
@@ -11,7 +14,7 @@ Calculator *Calculator::getInstance() {
 		instance->currentRegister = 1;
 		instance->operation = '\0';
 		instance->interface = CalculatorInterface::getInstance();
-
+		instance->interface->printNumber(0);
 	}
 
 	return instance;
@@ -33,7 +36,7 @@ void Calculator::bumpRegisterValue(unsigned int &value) {
 			new_value = register2;
 			break;
 	}
-
+	
 	this->interface->printNumber(new_value);
 
 }

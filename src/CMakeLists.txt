@@ -4,6 +4,7 @@ add_executable(cli-calc main.cpp)
 target_sources(cli-calc
 	PUBLIC interface.cpp
 	PUBLIC operations.cpp
+	PUBLIC calculator.cpp
 )
 
 find_package(Curses REQUIRED)

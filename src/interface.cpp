@@ -1,3 +1,4 @@
+#include <curses.h>
 #include <ncurses.h>
 #include <string>
 #include <tuple>
@@ -64,9 +65,6 @@ void cli::printMainMenu() {
 	printCenteredString(y+5, "Press (h) for Help");
 	printCenteredString(y+6, "Press (q) to Quit");
 	
-	CalculatorInterface::getInstance()->drawCalculatorInterface();
-	CalculatorInterface::getInstance()->printNumber(9999999);
-
 	refresh();
 
 }

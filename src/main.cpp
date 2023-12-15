@@ -1,5 +1,8 @@
 #include "interface.h"
+#include "calculator.h"
 #include "operations.h"
+
+#include <curses.h>
 #include <ncurses.h>
 
 int main() {
@@ -7,6 +10,8 @@ int main() {
 	char pressed_key = {};
 
 	cli::initInterface();
+
+	Calculator *calc = Calculator::getInstance();
 
 	while(1) {
 
@@ -22,6 +27,7 @@ int main() {
 				Help::action();
 				getch();
 				break;
+
 		};
 
 	}

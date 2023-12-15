@@ -7,14 +7,13 @@ class Calculator {
 	int register1, register2, currentRegister;
 	char operation;
 
+	static Calculator *instance;
 	CalculatorInterface *interface;
 
 	/**
 	 * Private constructor because of singleton implementation
 	 */
 	Calculator() = default;
-
-	static Calculator *instance;
 
 public:
 	/**
@@ -24,7 +23,7 @@ public:
 	 *
 	 * @returns Calculator global instance.
 	 */
-	Calculator *getInstance();
+	static Calculator *getInstance();
 
 	/**
 	 * Bumps the value of a register with the integer that's passed.
