@@ -1,3 +1,5 @@
+#pragma once
+
 #include "interface.h"
 
 class Calculator {
@@ -56,7 +58,8 @@ public:
 
 	/**
 	 * Uses the values stored in register1 and register2 to conduct
-	 * operation on. If the value of register2 or the operation has not
+	 * operation on. Prints the result to the interface. 
+	 * If the value of register2 or the operation has not
 	 * been set yet, do nothing.
 	 */
 	void calculate();
