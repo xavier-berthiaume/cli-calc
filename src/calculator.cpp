@@ -13,11 +13,27 @@ Calculator *Calculator::getInstance() {
 		instance = new Calculator();
 		instance->currentRegister = 1;
 		instance->operation = '\0';
-		instance->interface = CalculatorInterface::getInstance();
+		instance->interface = new CalculatorInterface();
 		instance->interface->printNumber(0);
 	}
 
 	return instance;
+
+}
+
+
+WINDOW *Calculator::getWindow() {
+
+	return this->interface->getWindow();
+
+}
+
+
+void Calculator::setOperation(char &operation) {
+
+	this->operation = operation;
+	this->currentRegister = 2;
+	this->interface->printNumber(register2);
 
 }
 
@@ -62,15 +78,6 @@ void Calculator::negateRegister() {
 }
 
 
-void Calculator::setOperation(char &operation) {
-
-	this->operation = operation;
-	this->currentRegister = 2;
-	this->interface->printNumber(register2);
-
-}
-
-
 void Calculator::clearRegisters() {
 
 	register1 = 0;
@@ -105,5 +112,23 @@ void Calculator::calculate() {
 	}
 
 	this->interface->printNumber(result);
+
+}
+
+void Calculator::displayInterface() {
+
+	int register_value;
+
+	this->interface->drawCalculatorInterface();
+	switch(currentRegister) {
+		case 1:
+			register_value = register1;
+			break;
+		case 2:
+			register_value = register2;
+			break;
+	}
+
+	this->interface->printNumber(register_value);
 
 }

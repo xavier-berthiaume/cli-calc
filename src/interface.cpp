@@ -37,17 +37,12 @@ void minimumWindowSizeWarning() {
 
 void cli::initInterface() {
 
-
 	initscr();
 
 	if (COLS < cli::MINIMUM_COLS)
 		minimumWindowSizeWarning();
 	else if (LINES < cli::MINIMUM_ROWS)
 		minimumWindowSizeWarning();
-
-	// Create the CalculatorInterface object for the
-	// program to use
-	CalculatorInterface::getInstance();
 
 }
 
@@ -64,8 +59,6 @@ void cli::printMainMenu() {
 	
 	printCenteredString(y+5, "Press (h) for Help");
 	printCenteredString(y+6, "Press (q) to Quit");
-	
-	refresh();
 
 }
 
@@ -82,32 +75,16 @@ void cli::printHelpMenu() {
 
 	printCenteredString(y+5, "PRESS ANY KEY TO CONTINUE");
 
-	refresh();
-
 }
 
 
-CalculatorInterface *CalculatorInterface::instance = nullptr;
+CalculatorInterface::CalculatorInterface() {
 
+	int start_x, start_y;
 
-CalculatorInterface *CalculatorInterface::getInstance() {
-
-	CalculatorInterface *instance = CalculatorInterface::instance;
-
-	if(instance == nullptr) {
-		
-		instance = new CalculatorInterface();
-		
-		int start_x, start_y;
-
-		start_x = COLS/2 - CalculatorInterface::WIDTH/2;
-		start_y = 10;
-		instance->win = newwin(CalculatorInterface::HEIGHT, CalculatorInterface::WIDTH, start_y, start_x);
-		refresh();
-
-	}
-
-	return instance;
+	start_x = COLS/2 - CalculatorInterface::WIDTH/2;
+	start_y = 10;
+	this->win = newwin(CalculatorInterface::HEIGHT, CalculatorInterface::WIDTH, start_y, start_x);
 
 }
 
@@ -452,6 +429,8 @@ void CalculatorInterface::drawCalculatorInterface() {
 
 	box(this->getWindow(), 0, 0);
 	wrefresh(this->getWindow());
+	refresh();
+
 }
 
 

@@ -44,12 +44,10 @@ namespace cli {
  */
 class CalculatorInterface {
 
-	static CalculatorInterface *instance;
 	static const int WIDTH = 50, HEIGHT = 20;
 
 	WINDOW *win;
 
-	CalculatorInterface() = default;
 
 	/**
 	 * Below are a collection of functions that print to the calculator
@@ -79,16 +77,16 @@ class CalculatorInterface {
 public:
 
 	/**
-	 * Static function that acts as both the initalizer for the global 
-	 * CalculatorInterface singleton, and as a means to fetch that instance.
+	 * Constructor for CalculatorInterface.
+	 * Creates a new window of size WIDTH by HEIGHT
 	 */
-	static CalculatorInterface *getInstance();
+	CalculatorInterface();
 
 	/**
 	 * Getter function for the win member variable.
 	 */
 	WINDOW *getWindow();
-
+ 
 	/**
 	 * Draws out the calculators borders as a box. The size of the box is that
 	 * defined by WIDTH and HEIGHT.
@@ -103,4 +101,5 @@ public:
 	 * interface.
 	 */
 	void printNumber(int value_to_print);
+
 };
