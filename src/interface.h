@@ -44,7 +44,7 @@ namespace cli {
  */
 class CalculatorInterface {
 
-	static const int WIDTH = 50, HEIGHT = 20;
+	static const int WIDTH = 50, HEIGHT = 7;
 
 	WINDOW *win;
 

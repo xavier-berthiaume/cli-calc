@@ -1,4 +1,3 @@
-#include <curses.h>
 #include <ncurses.h>
 #include <string>
 #include <tuple>
@@ -435,6 +434,8 @@ void CalculatorInterface::drawCalculatorInterface() {
 
 
 void CalculatorInterface::printNumber(int value_to_print) {
+
+	wclear(this->getWindow());
 
 	std::string converted_number = std::to_string(value_to_print);
 	int position = {0};

@@ -44,13 +44,13 @@ void Calculator::bumpRegisterValue(unsigned int &value) {
 
 	switch(currentRegister) {
 		case 1:
-			if(register1*10<9999999){
+			if(register1*10<9999999 && register1*10>-999999) {
 				register1 = register1*10 + value;
 				new_value = register1;
 			}
 			break;
 		case 2:
-			if(register2*10<9999999){
+			if(register2*10<9999999 && register1*10>-999999) {
 				register2 = register2*10 + value;
 				new_value = register2;
 			}
@@ -68,12 +68,16 @@ void Calculator::negateRegister() {
 
 	switch(currentRegister) {
 		case 1:
-			register1 = register1*-1;
-			new_value = register1;
+			if(register1*-1<9999999 && register1*-1>-999999) {
+				register1 = register1*-1;
+				new_value = register1;
+			}
 			break;
 		case 2:
-			register2 = register2*-1;
-			new_value = register2;
+			if(register2*-1<9999999 && register2*-1>-999999) {
+				register2 = register2*-1;
+				new_value = register2;
+			}
 			break;
 	}
 

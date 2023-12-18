@@ -63,6 +63,9 @@ int main() {
 			case 57:
 				bump_value = 9;
 				break;
+			case 45:
+				calc->negateRegister();
+				break;
 		};
 		
 		if(bump_value)
