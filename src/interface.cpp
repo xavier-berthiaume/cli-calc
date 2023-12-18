@@ -439,6 +439,13 @@ void CalculatorInterface::printNumber(int value_to_print) {
 	wclear(this->getWindow());
 
 	std::string converted_number = std::to_string(value_to_print);
+
+	while (converted_number.length() < 7) {
+
+		converted_number.insert(0, " ");
+
+	}
+
 	int position = {0};
 
 	for(char &digit : converted_number) {

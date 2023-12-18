@@ -23,7 +23,7 @@ int main() {
 
 		pressed_key = getch();
 
-		unsigned int bump_value = -1;
+		unsigned int bump_value = 10;
 		char operation = '\0';
 		
 		switch(pressed_key) {
