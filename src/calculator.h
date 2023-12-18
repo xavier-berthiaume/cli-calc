@@ -78,9 +78,5 @@ public:
 	 */
 	void displayInterface();
 
-	/**
-	 * Clears the calculators interface of any remaining numbers
-	 */
-	void clearInterface();
 
 };

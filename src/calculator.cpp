@@ -119,7 +119,9 @@ void Calculator::calculate() {
 			break;
 	}
 
-	this->interface->printNumber(result);
+	this->clearRegisters();
+	register1 = result;
+	this->interface->printNumber(register1);
 
 }
 

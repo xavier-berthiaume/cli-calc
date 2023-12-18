@@ -16,14 +16,15 @@ int main() {
 
 		cli::printMainMenu();	
 		
-		calc-> displayInterface();
+		calc->displayInterface();
 
 		wrefresh(calc->getWindow());
 		refresh();
 
 		pressed_key = getch();
 
-		unsigned int bump_value = 0;
+		unsigned int bump_value = -1;
+		char operation = '\0';
 		
 		switch(pressed_key) {
 			case Quit::key_ascii_code: 
@@ -63,14 +64,34 @@ int main() {
 			case 57:
 				bump_value = 9;
 				break;
-			case 45:
+			case 110:
 				calc->negateRegister();
+				break;
+			case 99:
+				calc->clearRegisters();
+				break;
+			case 43:
+				operation = '+';
+				break;
+			case 45:
+				operation = '-';
+				break;
+			case 47:
+				operation = '/';
+				break;
+			case 42:
+				operation = '*';
+				break;
+			case 61:
+				calc->calculate();
 				break;
 		};
 		
-		if(bump_value)
+		if(bump_value >= 0 && bump_value < 10)
 			calc->bumpRegisterValue(bump_value);
 
+		if(operation)
+			calc->setOperation(operation);
 	}
 
 	return 0;

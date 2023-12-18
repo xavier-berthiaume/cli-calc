@@ -55,7 +55,7 @@ void cli::printMainMenu() {
 
 	printCenteredString(y, "<----- CLI CALCULATOR ----->");
 	printCenteredString(y+1, "Written by Xavier Berthiaume circa 2023");
-	
+
 	printCenteredString(y+5, "Press (h) for Help");
 	printCenteredString(y+6, "Press (q) to Quit");
 
@@ -69,9 +69,10 @@ void cli::printHelpMenu() {
 	y = 2;
 
 	printCenteredString(y, "<----- HELP MENU ----->");
-	printCenteredString(y+1, "Press a for special effects");
-	printCenteredString(y+2, "Press q to quit");
 
+	printCenteredString(y+1, "Press (c) to Clear");
+	printCenteredString(y+2, "Press (n) to Negate");
+	printCenteredString(y+3, "Press (any integer) to expand number");
 	printCenteredString(y+5, "PRESS ANY KEY TO CONTINUE");
 
 }
