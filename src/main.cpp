@@ -23,7 +23,7 @@ int main() {
 
 		pressed_key = getch();
 
-		unsigned int bump_value;
+		unsigned int bump_value = 0;
 		
 		switch(pressed_key) {
 			case Quit::key_ascii_code: 
