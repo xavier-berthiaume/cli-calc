@@ -3,16 +3,19 @@
 A versatile command-line calculator built with C++ and powered by ncurses, offering a fullscreen adaptive interface that adjusts seamlessly to your console size. Perform basic arithmetic operations with ease in a dynamic and visually appealing environment.
 <h2>🚀 Features</h2>
 
-<p>
 Responsive Interface: Automatically adapts to your terminal size for an optimal user experience.
+
 Comprehensive Operations:
-    Addition (+)
-    Subtraction (-)
-    Multiplication (×)
-    Division (÷)
-    Modulus (%)
+
+1. Addition (+)
+2. Subtraction (-)
+3. Multiplication (×)
+4. Division (÷)
+5. Modulus (%)
+    
 Keyboard Navigation: Intuitive key bindings for effortless input and operation selection.
-Real-Time Feedback: Instantly see your results displayed in a fullscreen calculator layout.</p>
+
+Real-Time Feedback: Instantly see your results displayed in a fullscreen calculator layout.
 
 <h2>🛠️ Built With</h2>
 
