@@ -82,6 +82,9 @@ int main() {
 			case 42:
 				operation = '*';
 				break;
+            case 37:
+                operation = '%';
+                break;
 			case 61:
 				calc->calculate();
 				break;

@@ -41,7 +41,7 @@ public:
 	 *
 	 * @param A char of the operator that will be used to calculate the 
 	 * result of the expression.
-	 * Accepted parameters are '+', '-', '/', '*'
+	 * Accepted parameters are '+', '-', '/', '*', '%'
 	 */
 	void setOperation(char &operation);
 	

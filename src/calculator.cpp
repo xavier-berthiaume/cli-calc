@@ -117,6 +117,9 @@ void Calculator::calculate() {
 		case '*':
 			result = register1 * register2;
 			break;
+        case '%':
+            result = register1 % register2;
+            break;
 	}
 
 	this->clearRegisters();
