@@ -34,6 +34,7 @@ Navigate to the project directory and create a build folder:
 Build the program with CMake:
 
     cmake -S . -B ./build
+    cd build
 
 Compile the program:
 
