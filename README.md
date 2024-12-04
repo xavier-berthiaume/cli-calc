@@ -1,66 +1,79 @@
-Fullscreen Adaptive CLI Calculator 🖩
+<h1>Fullscreen Adaptive CLI Calculator 🖩</h1>
 
 A versatile command-line calculator built with C++ and powered by ncurses, offering a fullscreen adaptive interface that adjusts seamlessly to your console size. Perform basic arithmetic operations with ease in a dynamic and visually appealing environment.
-🚀 Features
+<h2>🚀 Features</h2>
 
-    Responsive Interface: Automatically adapts to your terminal size for an optimal user experience.
-    Comprehensive Operations:
-        Addition (+)
-        Subtraction (-)
-        Multiplication (×)
-        Division (÷)
-        Modulus (%)
-    Keyboard Navigation: Intuitive key bindings for effortless input and operation selection.
-    Real-Time Feedback: Instantly see your results displayed in a fullscreen calculator layout.
+<p>
+Responsive Interface: Automatically adapts to your terminal size for an optimal user experience.
+Comprehensive Operations:
+    Addition (+)
+    Subtraction (-)
+    Multiplication (×)
+    Division (÷)
+    Modulus (%)
+Keyboard Navigation: Intuitive key bindings for effortless input and operation selection.
+Real-Time Feedback: Instantly see your results displayed in a fullscreen calculator layout.</p>
 
-🛠️ Built With
+<h2>🛠️ Built With</h2>
+<p>
+C++: Leveraging object-oriented principles for robust and efficient computation.
+ncurses: Creating a dynamic text-based interface that mimics a graphical UI.    
+</p>
 
-    C++: Leveraging object-oriented principles for robust and efficient computation.
-    ncurses: Creating a dynamic text-based interface that mimics a graphical UI.
+<h2>📦 Installation</h2>
 
-📦 Installation
+<p>Clone the repository:
 
-    Clone the repository:
+    git clone https://github.com/xavier-berthiaume/cli-calc
 
-git clone https://github.com/yourusername/calculator-ncurses.git
+Navigate to the project directory and create a build folder:
 
-Navigate to the project directory:
+    cd cli-calc
+    mkdir build
 
-cd calculator-ncurses
+Build the program with CMake:
+
+    cmake -S . -B ./build
 
 Compile the program:
 
-make
+    make
 
 Run the calculator:
 
-    ./calculator
+    ./cli-calc
+</p>
 
-📖 Usage
+<h2>📖 Usage</h2>
 
-    Launch the calculator in your terminal.
-    Use the arrow keys to navigate the interface.
-    Input your numbers and select the desired operation.
-    View the result dynamically displayed on the screen.
+<p>
+Launch the calculator in your terminal at any time. 
+The interface is simple enough to navigate, and a help menu is included.
+To clear the registers (the calculators memory), simply use the 'c' key
+on the keyboard, otherwise enter numbers using the appropriate keys. The
+supported operations are addition (+), substraction (-), multiplication (*),
+division (/) and modulus (%).
+</p>
 
-🎨 Screenshots
-
+<h2>🎨 Screenshots</h2>
+<div align='center'>
+    <img src="https://github.com/user-attachments/assets/718a0f2e-b61e-49b0-beff-fd20e460fb6e" alt="Screenshot of the calculator's UI within the CLI." width="900" />
+</div>
 
 Showcasing the adaptive fullscreen calculator in action.
-🤝 Contributing
+<h2>🤝 Contributing</h2>
 
 Contributions are welcome! If you'd like to improve the project, please:
 
-    Fork the repository.
-    Create a new branch (feature/your-feature-name).
-    Commit your changes and submit a pull request.
+1. Fork the repository.
+2. Create a new branch (feature/your-feature-name).
+3. Commit your changes and submit a pull request. 
 
-📜 License
+<h3>📜 License</h3>
 
 This project is licensed under the MIT License.
-🧑‍💻 Author
+<h3>🧑‍💻 Author</h3>
 
-Your Name
+This project was written by me, Xavier Berthiaume.
+
 Feel free to connect with me on LinkedIn or check out more of my work on GitHub.
-
-Let me know if you'd like me to add more sections, such as FAQs, known issues, or advanced usage tips! cli-calc
