@@ -15,10 +15,10 @@ Keyboard Navigation: Intuitive key bindings for effortless input and operation s
 Real-Time Feedback: Instantly see your results displayed in a fullscreen calculator layout.</p>
 
 <h2>🛠️ Built With</h2>
-<p>
+
 C++: Leveraging object-oriented principles for robust and efficient computation.
+
 ncurses: Creating a dynamic text-based interface that mimics a graphical UI.    
-</p>
 
 <h2>📦 Installation</h2>
 
