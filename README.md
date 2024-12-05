@@ -1,3 +1,7 @@
+<div align='center'>
+    <img src="https://github.com/user-attachments/assets/718a0f2e-b61e-49b0-beff-fd20e460fb6e" alt="Screenshot of the calculator's UI within the CLI." width="900" />
+</div>
+
 <h1>Fullscreen Adaptive CLI Calculator 🖩</h1>
 
 A versatile command-line calculator built with C++ and powered by ncurses, offering a fullscreen adaptive interface that adjusts seamlessly to your console size. Perform basic arithmetic operations with ease in a dynamic and visually appealing environment.
@@ -59,12 +63,6 @@ supported operations are addition (+), substraction (-), multiplication (*),
 division (/) and modulus (%).
 </p>
 
-<h2>🎨 Screenshots</h2>
-<div align='center'>
-    <img src="https://github.com/user-attachments/assets/718a0f2e-b61e-49b0-beff-fd20e460fb6e" alt="Screenshot of the calculator's UI within the CLI." width="900" />
-</div>
-
-Showcasing the adaptive fullscreen calculator in action.
 <h2>🤝 Contributing</h2>
 
 Contributions are welcome! If you'd like to improve the project, please:
